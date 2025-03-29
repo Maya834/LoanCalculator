@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #000;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        #Result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Loan Calculator</h2>
+        <form>
+            <label for="amount"><h2> Amount (₹)</h2> </label>
+            <input type="text" id="amount" name="amount"><br><br>
+            
+            <label for="rate"><h2> Interest Rate :</h2></label>
+            <input type="text" id="rate" name="rate"> <br><br>
+    
+            <label for="months"><h2> Months to Pay :</h2></label>
+            <input type="text" id="months" name="months"><br><br>
+        </form>
+        <button type="submit" id="but1" onclick="cal()"><b>Calculate</b></button>
+        <h2 id="Result"></h2>
+    </div>
+
+    <script>
+        function cal(){
+            var amount = document.getElementById("amount").value;
+            var rate = document.getElementById("rate").value;
+            var months = document.getElementById("months").value;
+
+            var Total = (amount * rate) / months;
+            document.getElementById("Result").innerHTML = "Total: ₹" + Total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
